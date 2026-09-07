@@ -1,4 +1,3 @@
-
 """
 Natural Language Q&A Agent
 Lets the user ask questions about their data in plain language.
@@ -24,7 +23,7 @@ def create_qa_agent(df: pd.DataFrame):
         raise ValueError("GEMINI_API_KEY not found. Please set it in your .env file.")
 
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
+        model="gemini-3-flash",
         google_api_key=api_key,
         temperature=0,
     )
