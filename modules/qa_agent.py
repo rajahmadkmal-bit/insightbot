@@ -23,7 +23,7 @@ def create_qa_agent(df: pd.DataFrame):
         raise ValueError("GEMINI_API_KEY not found. Please set it in your .env file.")
 
     llm = ChatGoogleGenerativeAI(
-        model="gemini-3-flash",
+        model="gemini-flash-latest",
         google_api_key=api_key,
         temperature=0,
     )
