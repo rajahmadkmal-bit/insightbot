@@ -1,0 +1,16 @@
+Date,Product,Region,Units_Sold,Revenue
+2025-01-05,Laptop,North,12,3200.50
+2025-01-10,Phone,South,25,4500.00
+2025-01-15,Tablet,East,8,1200.75
+2025-02-02,Headphones,West,40,1800.00
+2025-02-10,Monitor,North,15,2250.00
+2025-02-18,Laptop,South,10,2800.00
+2025-03-01,Phone,East,30,5200.00
+2025-03-12,Tablet,West,18,2700.00
+2025-03-20,Monitor,North,22,3300.00
+2025-04-05,Headphones,South,35,1575.00
+2025-04-15,Laptop,East,,3400.00
+2025-04-25,Phone,North,28,4900.00
+2025-05-03,Tablet,South,20,3000.00
+2025-05-14,Monitor,West,17,2550.00
+2025-05-14,Monitor,West,17,2550.00

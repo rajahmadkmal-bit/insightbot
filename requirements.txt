@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy
+matplotlib
+plotly
+langchain
+langchain-google-genai
+langchain-experimental
+python-dotenv
