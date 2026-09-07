@@ -8,3 +8,4 @@ langchain-google-genai
 langchain-experimental
 python-dotenv
 openpyxl
+tabulate
