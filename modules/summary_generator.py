@@ -22,7 +22,7 @@ def get_llm():
         raise ValueError("GEMINI_API_KEY not found. Please set it in your .env file.")
 
     return ChatGoogleGenerativeAI(
-       model="gemini-flash-latest",
+        model="gemini-flash-latest",
         google_api_key=api_key,
         temperature=0.3,
     )
@@ -43,6 +43,27 @@ def build_stats_context(df: pd.DataFrame) -> str:
         f"Sample rows:\n{top_rows_preview}"
     )
     return context
+
+
+def extract_text_from_response(response_content) -> str:
+    """
+    Normalize the LLM response into a plain string.
+    Some Gemini models return content as a list of structured blocks
+    instead of a plain string, so this handles both cases safely.
+    """
+    if isinstance(response_content, str):
+        return response_content
+
+    if isinstance(response_content, list):
+        text_parts = []
+        for block in response_content:
+            if isinstance(block, dict) and block.get("type") == "text":
+                text_parts.append(block.get("text", ""))
+            elif isinstance(block, str):
+                text_parts.append(block)
+        return "\n".join(text_parts).strip()
+
+    return str(response_content)
 
 
 def generate_executive_summary(df: pd.DataFrame, language: str = "English") -> str:
@@ -71,4 +92,4 @@ Dataset summary:
 """
 
     response = llm.invoke(prompt)
-    return response.content
+    return extract_text_from_response(response.content)
